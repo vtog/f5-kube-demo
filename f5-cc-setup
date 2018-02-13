@@ -1,0 +1,4 @@
+kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=admin
+kubectl create serviceaccount bigip-ctlr -n kube-system
+kubectl create clusterrolebinding bigip-ctlr-clusteradmin --clusterrole=cluster-admin --serviceaccount=kube-system:bigip-ctlr
+
