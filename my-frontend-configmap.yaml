@@ -22,7 +22,7 @@ data:
         "backend": {
           "serviceName": "my-frontend",
           "servicePort": 80,
-            "healthMonitors": [{
+          "healthMonitors": [{
             "interval": 30,
             "protocol": "http",
             "send": "HEAD / HTTP/1.0\r\n\r\n",
