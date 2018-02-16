@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#create kubernetes bigip login
+kubectl delete secret bigip-login -n kube-system
+#create kubernetes serviceaccoutn for bigip
+kubectl delete serviceaccount k8s-bigip-ctlr -n kube-system
+#create cluster role for bigip serviceaccount
+kubectl delete clusterrolebinding k8s-bigip-ctlr-clusteradmin
