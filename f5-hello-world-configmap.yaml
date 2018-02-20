@@ -1,7 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: my-frontend
+  name: f5-hello-world
   namespace: default
   labels:
     f5type: virtual-server
@@ -20,13 +20,13 @@ data:
           }
         },
         "backend": {
-          "serviceName": "my-frontend",
-          "servicePort": 80,
+          "serviceName": "f5-hello-world",
+          "servicePort": 8080,
           "healthMonitors": [{
-            "interval": 30,
+            "interval": 5,
             "protocol": "http",
             "send": "HEAD / HTTP/1.0\r\n\r\n",
-            "timeout": 91
+            "timeout": 16
           }]
         }
       }
