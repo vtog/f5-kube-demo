@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: f5-hello-world 
 spec:
-  replicas: 4
+  replicas: 2
   template:
     metadata:
       labels:
