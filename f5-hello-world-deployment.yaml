@@ -14,4 +14,4 @@ spec:
         image: "f5devcentral/f5-hello-world"
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 8080
