@@ -9,6 +9,5 @@ spec:
   - port: 8080
     protocol: TCP
     targetPort: 8080
-  type: NodePort
   selector:
     run: f5-hello-world
