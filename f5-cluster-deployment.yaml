@@ -35,5 +35,5 @@ spec:
             "--bigip-partition=kubernetes",
             "--namespace=default",
             "--pool-member-type=cluster",
-            "--flannel-name=fl_vxlan"
+            "--flannel-name=fl-vxlan"
           ]
