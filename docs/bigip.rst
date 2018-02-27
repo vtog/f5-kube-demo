@@ -1,5 +1,5 @@
-Setup BIG-IP
-------------
+Prepare BIG-IP for Kubernetes
+=============================
 | tmsh create auth partition kubernetes
 | tmsh create net tunnels vxlan fl-vxlan port 8472 flooding-type none
 | tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.1.20.10

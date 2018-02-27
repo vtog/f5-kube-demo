@@ -10,5 +10,5 @@ F5 / Kubernetes Lab Setup Doc
    :maxdepth: 2
    :caption: Contents:
 
-   kubernetes.rst
-   bigip.rst
+   kubernetes
+   bigip
