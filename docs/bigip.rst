@@ -1,0 +1,7 @@
+Setup BIG-IP
+------------
+| tmsh create auth partition kubernetes
+| tmsh create net tunnels vxlan fl-vxlan port 8472 flooding-type none
+| tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.1.20.10
+| tmsh create net self 10.244.20.10 address 10.244.20.10/255.255.0.0 allow-service none vlan fl-vxlan
+| tmsh create net self 10.244.20.11 address 10.244.20.11/255.255.0.0 allow-service none vlan fl-vxlan traffic-group traffic-group-1
