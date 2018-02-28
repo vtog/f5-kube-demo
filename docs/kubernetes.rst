@@ -1,18 +1,19 @@
-==========================
 Build a Kubernetes Cluster
 ==========================
-The following steps will walk you through building your own kubernetes cluster. The Ravello BP has one Master and two Nodes.
+The following steps will walk you through building the kubernetes cluster. The Ravello BP has:
+    - 1x Master (kube-master)
+    - 2x Minions (kube-node1 & kube-node2)
 
-Each command need to be run on the master and each node(s) unless otherwise specified. This lab uses the following host names:
+Each of the following commands need to be run on all three servers unless otherwise specified.
 
 #. From the jumphost using putty open a new SSH session to each of the following servers:
     | kube-master
     | kube-node1
     | kube-node2
 #. Edit /etc/hosts and add the following static host entries:
-    | 10.1.20.21   kube-master
-    | 10.1.20.22   kube-node1
-    | 10.1.20.23   kube-node2
+    | 10.1.20.21    kube-master
+    | 10.1.20.22    kube-node1
+    | 10.1.20.23    kube-node2
 #. Upgrade Ubuntu to ensure an up-to-date OS
     | apt update && apt upgrade -y
 #. Add the docker repo
