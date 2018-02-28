@@ -8,6 +8,7 @@ F5 / Kubernetes Lab Setup Doc
 
 .. toctree::
    :maxdepth: 2
-   
+
+   intro
    kubernetes
    bigip
