@@ -33,5 +33,6 @@ spec:
             "--bigip-password=$(BIGIP_PASSWORD)",
             "--bigip-url=10.1.20.10",
             "--bigip-partition=kubernetes",
-            "--namespace=default"
+            "--namespace=default",
+            "--pool-member-type=nodeport"
           ]

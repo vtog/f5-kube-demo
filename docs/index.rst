@@ -12,3 +12,5 @@ F5 / Kubernetes Lab Setup Doc
    intro
    kubernetes
    bigip
+   f5-deploy
+   f5-hello-world
