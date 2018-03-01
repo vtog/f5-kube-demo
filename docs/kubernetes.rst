@@ -38,7 +38,7 @@ Each of the following commands need to be run on all three servers unless otherw
 #. Initialize kubernetes with default network, **master only**. (default flannel network 10.244.0.0/16)
     | ~# kubeadm init --pod-network-cidr=10.244.0.0/16
     |
-    | **Take note of output of this command will be needed to join the nodes to the master.**
+    | **Take note of the output of this command.  It will be needed to join the nodes to the master.**
 #. Configure kubernetes management, **master only**.  At this point you should be logged in as root.  The following will update both root and ubuntu user accounts.
     | ~# mkdir -p $HOME/.kube
     | ~# sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
