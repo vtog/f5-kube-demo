@@ -25,7 +25,15 @@ Each of the following commands need to be run on all three servers unless otherw
     | EOF
 #. Install docker
     | ~# apt update && apt install -y docker-ce
-#. Check docker is up and running? (should see the hello-world container pulled and ran with a "hello world" message.)
+#. Add docker options
+    | ~# cat << EOF > /etc/docker/daemon.json
+    | {
+    | "exec-opts": ["native.cgroupdriver=systemd"]
+    | }
+    | EOF
+#. Restart docker
+    | service docker restart
+#. Verify docker is up and running? (should see the hello-world container pulled and ran with a "hello world" message.)
     | ~# docker run hello-world
 #. Install kubernetes
     | ~# apt install -y kubelet kubeadm kubectl
@@ -41,7 +49,9 @@ Each of the following commands need to be run on all three servers unless otherw
     | ~# sudo chown $(id -u):$(id -g) $HOME/.kube/config
 #. Install flannel on the master, **master only**. (default flannel network 10.244.0.0/16)
     | ~# kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-#. Check Kubernetes is up and running? (should see several kubernetes pods up and running.)
+#. Verivy Kubernetes is up and running? (should see several kubernetes pods up and running.)
     | ~# kubectl get pods --all-namespaces
 #. Add the kubernetes "Nodes" to the cluster, **nodes only**. (cut and past the command from the previous "kubeadm init" output. It will look something like this...
     | ~# kubeadm join --token 7f92b3... 10.1.20.21:6443 --discovery-token-ca-cert-hash sha256:9c4...
+#. Verify kube-node 1 & 2 are up and running
+    | ~# kubectl get nodes
