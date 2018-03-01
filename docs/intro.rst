@@ -1,7 +1,7 @@
 Introduction
 ============
 This lab is designed to walk through building a basic kubernetes cluster. The Ravello BP has the following components:
-    - Ravello BluePrint = **Kubernetes-Container-Lab-vtog-v1.0**
+    - Ravello BluePrint = **Kubernetes-Container-Lab-vtog-v1.0.1**
         - 1x Linux Jumphost (Ubuntu Xenial)
         - 1x F5 Big-IP (v13.1.0.3)
         - 1x Master (Ubuntu Xenial)
