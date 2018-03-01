@@ -1,6 +1,7 @@
 Deploy the F5 Hello World Container
 ======================================
 All of the following commands and yaml files are contained within the "f5-kube-demo" github repo.
+    ``git clone https://github.com/vtog/f5-kube-demo.git``
 
 Setup commands:
 
@@ -24,3 +25,6 @@ Setup commands:
 
     .. include:: ../f5-hello-world-service.yaml
         :literal:
+
+#. Verify f5-hello-world container is up and running
+    | ~# kubectl get pods -o wide

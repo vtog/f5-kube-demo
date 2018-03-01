@@ -1,6 +1,7 @@
 Deploy the F5 / Kubernetes Container Connecter
 =================================================
 All of the following commands and yaml files are contained within the "f5-kube-demo" github repo.
+    ``git clone https://github.com/vtog/f5-kube-demo.git``
 
 For a more thorough explanation see http://clouddocs.f5.com/containers/v2/kubernetes/index.html
 
@@ -31,3 +32,6 @@ Use one or the other of the following commands depending on deployment type. nod
 
     .. include:: ../f5-bigip-node.yaml
         :literal:
+
+#. Verify f5 container connector is up and running
+    | ~# kubectl get pods -n kube-system -o wide
