@@ -55,5 +55,5 @@ Each of the following commands need to be run on all three servers unless otherw
     | **Before running next step wait for all system pods to show status "Running"**
 #. Add the kubernetes "Nodes" to the cluster, **nodes only**. (cut and past the command from the previous "kubeadm init" output. It will look something like this...
     | ~# kubeadm join --token 7f92b3... 10.1.20.21:6443 --discovery-token-ca-cert-hash sha256:9c4...
-#. Verify kube-node 1 & 2 are up and running
+#. Verify kube-node 1 & 2 are up and running...test
     | ~# kubectl get nodes
