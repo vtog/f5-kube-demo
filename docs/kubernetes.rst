@@ -36,7 +36,7 @@ Each of the following commands need to be run on all three servers unless otherw
 #. Install kubernetes
     | :kbd:`$ apt install -y kubelet kubeadm kubectl`
 #. Initialize kubernetes with default network, **master only**. (default flannel network 10.244.0.0/16)
-    | $ kubeadm init --pod-network-cidr=10.244.0.0/16
+    | :kbd:`$ kubeadm init --pod-network-cidr=10.244.0.0/16`
     |
     | **Take note of this command output.  It will be needed to join the nodes to the master in a later step.**
 #. Configure kubernetes management, **master only**.  At this point you should be logged in as root.  The following will update both root and ubuntu user accounts.
