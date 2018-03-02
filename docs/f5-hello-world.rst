@@ -6,25 +6,25 @@ All of the following commands and yaml files are contained within the "f5-kube-d
 Setup commands:
 
 #. Create f5 hello world kubernetes deployment
-    | ~# kubectl create -f f5-hello-world-deployment.yaml
+    | :kbd:`$ kubectl create -f f5-hello-world-deployment.yaml`
 
     .. include:: ../f5-hello-world-deployment.yaml
         :literal:
 
 #. Create f5 hello world kubernetes configmap
-    | ~# kubectl create -f f5-hello-world-configmap.yaml
+    | :kbd:`$ kubectl create -f f5-hello-world-configmap.yaml`
 
     .. include:: ../f5-hello-world-configmap.yaml
         :literal:
 
 #. Create f5 hello world kubernetes service
-    | "type" needs to be set based on the mode configured for the f5 / kubernetes
-      container connector. Edit the yaml file and change type to "NodePort" or "ClusterIP".  The example below shows "NodePort"
+    | **"type" needs to be set based on the mode configured for the f5 / kubernetes
+      container connector. Edit the yaml file and change type to "NodePort" or "ClusterIP".  The example below shows "NodePort"**
     |
-    | ~# kubectl create -f f5-hello-world-service.yaml
+    | :kbd:`$ kubectl create -f f5-hello-world-service.yaml`
 
     .. include:: ../f5-hello-world-service.yaml
         :literal:
 
 #. Verify f5-hello-world container is up and running
-    | ~# kubectl get pods -o wide
+    | :kbd:`$ kubectl get pods -o wide`
