@@ -3,16 +3,22 @@ Build a Kubernetes Cluster
 Each of the following commands need to be run on all three servers unless otherwise specified.
 
 #. From the jumphost using putty open a new SSH session to each of the following servers. Putty sessions are pre-configured to connect with the default user "ubuntu" and cert.
-    | - :kbd:`kube-master`
-    | - :kbd:`kube-node1`
-    | - :kbd:`kube-node2`
+    | - kube-master
+    | - kube-node1
+    | - kube-node2
 #. Connect as root
-    | :kbd:`$ su -`
-    | :kbd:`$ passwd = default`
+    .. code:: bash
+
+        $ su -
+        $ passwd = default
+
 #. Edit /etc/hosts and add the following static host entries
-    | :kbd:`10.1.20.21 kube-master`
-    | :kbd:`10.1.20.22 kube-node1`
-    | :kbd:`10.1.20.23 kube-node2`
+    .. code:: bash
+
+        10.1.20.21    kube-master
+        10.1.20.22    kube-node1
+        10.1.20.23    kube-node2
+
 #. Upgrade Ubuntu to ensure an up-to-date OS
     | :kbd:`$ apt update && apt upgrade -y`
 #. Add the docker repo
@@ -36,9 +42,11 @@ Each of the following commands need to be run on all three servers unless otherw
 #. Install kubernetes
     | :kbd:`$ apt install -y kubelet kubeadm kubectl`
 #. Initialize kubernetes with default network, **master only**. (default flannel network 10.244.0.0/16)
-    | :kbd:`$ kubeadm init --pod-network-cidr=10.244.0.0/16`
-    |
-    | **Take note of this command output.  It will be needed to join the nodes to the master in a later step.**
+    .. code:: bash
+
+        $ kubeadm init --pod-network-cidr=10.244.0.0/16
+
+    | **Take note of the output.  It will be needed to join the nodes to the master in a later step.**
 #. Configure kubernetes management, **master only**.  At this point you should be logged in as root.  The following will update both root and ubuntu user accounts.
     | :kbd:`$ mkdir -p $HOME/.kube`
     | :kbd:`$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`
