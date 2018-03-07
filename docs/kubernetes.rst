@@ -48,7 +48,7 @@ Each of the following commands need to be run on all three servers unless otherw
 
         $ cat << EOF > /etc/docker/daemon.json
         {
-        "exec-opts": ["native.cgroupdriver=systemd"]
+        "exec-opts": ["native.cgroupdriver=cgroupfs"]
         }
         EOF
 #. Verify docker is up and running? (should see the hello-world container pulled and ran with a "hello world" message.)
@@ -69,7 +69,7 @@ Each of the following commands need to be run on all three servers unless otherw
     | **Take note of the output.  It will be needed to join the nodes to the master in a later step.**
 #. Configure kubernetes management, **master only**.  At this point you should be logged in as root.  The following will update both root and ubuntu user accounts.
     .. code:: bash
-    
+
         $ mkdir -p $HOME/.kube
         $ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
         $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
