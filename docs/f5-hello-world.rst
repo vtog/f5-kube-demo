@@ -1,7 +1,9 @@
 Deploy the F5 Hello World Container
 ======================================
 All of the following commands and yaml files are contained within the "f5-kube-demo" github repo.
-    ``git clone https://github.com/vtog/f5-kube-demo.git``
+    .. code:: bash
+
+        $ git clone https://github.com/vtog/f5-kube-demo.git
 
 Setup commands:
 
