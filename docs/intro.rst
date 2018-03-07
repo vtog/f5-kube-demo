@@ -13,16 +13,16 @@ This lab is designed to walk through building a basic kubernetes cluster. The Ra
         :widths: 10 20 20 10
         :header-rows: 1
 
-        * - **Component**
-          - **IP-ADDR**
-          - **VLAN**
-          - **Credentials**
-        * - jumphost
+        * - | **Component**
+          - | **IP-ADDR**
+          - | **VLAN**
+          - | **Credentials**
+        * - | jumphost
           - | dhcp
           - | mgmt: 10.1.1.0/24
           - | ubuntu/ubuntu
             | root/default
-        * - bigip1
+        * - | bigip1
           - | 10.1.1.10
             | 10.1.10.10
             | 10.1.20.10
@@ -36,17 +36,17 @@ This lab is designed to walk through building a basic kubernetes cluster. The Ra
             | flannel: 10.244.20.0/16
           - | admin/admin
             | root/default
-        * - kube-master
+        * - | kube-master
           - | 10.1.20.21
           - | internal: 10.1.20.0/24
           - | ubuntu/ubuntu
             | root/default
-        * - kube-node1
+        * - | kube-node1
           - | 10.1.20.22
           - | internal: 10.1.20.0/24
           - | ubuntu/ubuntu
             | root/default
-        * - kube-node2
+        * - | kube-node2
           - | 10.1.20.23
           - | internal: 10.1.20.0/24
           - | ubuntu/ubuntu
