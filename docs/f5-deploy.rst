@@ -1,6 +1,5 @@
 Deploy the F5 / Kubernetes Container Connecter
 =================================================
-
 All of the following commands and yaml files are contained within the "f5-kube-demo" github repo.
     .. code:: bash
 
