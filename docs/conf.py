@@ -25,9 +25,9 @@ copyright = u'2018, Vince Tognaci'
 author = u'Vince Tognaci'
 
 # The short X.Y version
-version = u''
+version = u'0.1'
 # The full version, including alpha/beta/rc tags
-release = u'v1'
+release = u'0.1'
 
 
 # -- General configuration ---------------------------------------------------

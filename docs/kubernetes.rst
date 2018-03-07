@@ -3,9 +3,9 @@ Build a Kubernetes Cluster
 Each of the following commands need to be run on all three servers unless otherwise specified.
 
 #. From the jumphost using putty open a new SSH session to each of the following servers. Putty sessions are pre-configured to connect with the default user "ubuntu" and cert.
-    | - kube-master
-    | - kube-node1
-    | - kube-node2
+    - kube-master
+    - kube-node1
+    - kube-node2
 #. Connect as root
     .. code:: bash
 
@@ -61,13 +61,15 @@ Each of the following commands need to be run on all three servers unless otherw
 
         $ apt install -y kubelet kubeadm kubectl
 
-#. Initialize kubernetes with default network, **master only**. (default flannel network 10.244.0.0/16)
+#. Initialize kubernetes with default network. (default flannel network 10.244.0.0/16)
+    .. note:: *Master ONLY!*
     .. code:: bash
 
         $ kubeadm init --pod-network-cidr=10.244.0.0/16
 
-    | **Take note of the output.  It will be needed to join the nodes to the master in a later step.**
-#. Configure kubernetes management, **master only**.  At this point you should be logged in as root.  The following will update both root and ubuntu user accounts.
+    .. note:: *...the output.  It will be needed to join the nodes to the master in a later step.*
+#. Configure kubernetes management.  At this point you should be logged in as root.  The following will update both root and ubuntu user accounts.
+    .. note:: *Master ONLY!*
     .. code:: bash
 
         $ mkdir -p $HOME/.kube
@@ -78,7 +80,8 @@ Each of the following commands need to be run on all three servers unless otherw
         $ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
         $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-#. Install flannel on the master, **master only**. (default flannel network 10.244.0.0/16)
+#. Install flannel on the master. (default flannel network 10.244.0.0/16)
+    .. note:: *Master ONLY!*
     .. code:: bash
 
         $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
@@ -88,8 +91,9 @@ Each of the following commands need to be run on all three servers unless otherw
 
         $ kubectl get pods --all-namespaces
 
-    | **Before running next step wait for all system pods to show status "Running"**
-#. Add the kubernetes "Nodes" to the cluster, **nodes only**. (cut and past the command from the previous "kubeadm init" output. It will look something like this...
+    .. note:: *Before running next step wait for all system pods to show status "Running"*
+#. Add the kubernetes nodes to the cluster. (cut and past the command from the previous "kubeadm init" output. It will look something like this...
+    .. note:: *Node 1 & 2 ONLY!*
     .. code:: bash
 
         $ kubeadm join --token 7f92b3... 10.1.20.21:6443 --discovery-token-ca-cert-hash sha256:9c4...
