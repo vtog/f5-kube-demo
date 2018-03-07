@@ -1,13 +1,13 @@
-Deploy the F5 / Kubernetes Container Connecter
+Deploy the F5 / Kubernetes Container Connector
 =================================================
 All of the following commands and yaml files are contained within the "f5-kube-demo" github repo.
     .. code:: bash
 
         $ git clone https://github.com/vtog/f5-kube-demo.git
 
-For a more thorough explanation see http://clouddocs.f5.com/containers/v2/kubernetes/index.html
+    .. note:: For a more thorough explanation see http://clouddocs.f5.com/containers/v2/kubernetes/index.html
 
-Basic container connector setup commands:
+**Basic f5 container connector deployment commands:**
 
 #. Create bigip login secret
     .. code:: bash
@@ -24,7 +24,7 @@ Basic container connector setup commands:
 
         $ kubectl create clusterrolebinding k8s-bigip-ctlr-clusteradmin --clusterrole=cluster-admin --serviceaccount=kube-system:k8s-bigip-ctlr
 
-Use one or the other of the following commands depending on deployment type. nodeport vs. cluster  (see http://clouddocs.f5.com/containers/v2/kubernetes/kctlr-modes.html)
+.. note:: Use one or the other of the following commands depending on deployment type. **nodeport vs. cluster** (see http://clouddocs.f5.com/containers/v2/kubernetes/kctlr-modes.html)
 
 #. **NodePort** example
     .. code:: bash

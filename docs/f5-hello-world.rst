@@ -5,7 +5,7 @@ All of the following commands and yaml files are contained within the "f5-kube-d
 
         $ git clone https://github.com/vtog/f5-kube-demo.git
 
-Setup commands:
+**Basic f5-hello-world application deployment commands:**
 
 #. Create f5 hello world kubernetes deployment
     .. code:: bash
