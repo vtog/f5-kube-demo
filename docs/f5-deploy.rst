@@ -49,6 +49,13 @@ All of the following commands and yaml files are contained within the "f5-kube-d
     .. include:: ../f5-bigip-node.yaml
         :literal:
 
+    .. note:: Be sure to find and update the "VtepMaC" with the correct address
+        from the f5 CLI
+
+    .. code:: bash
+
+        $ tmsh show net tunnels tunnel fl-vxlan all-properties
+
 #. Verify f5 container connector is up and running
     .. code:: bash
 
