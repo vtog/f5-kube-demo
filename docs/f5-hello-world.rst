@@ -24,7 +24,9 @@ All of the following commands and yaml files are contained within the "f5-kube-d
         :literal:
 
 #. Create f5 hello world kubernetes service
-    **"type" needs to be set based on the mode configured for the f5 / kubernetes container connector. Edit the yaml file and change type to "NodePort" or "ClusterIP".  The example below shows "NodePort"**
+    **"type" needs to be set based on the mode configured for the f5 /
+    kubernetes container connector. Edit the yaml file and change type to
+    "NodePort" or "ClusterIP".  The example below shows "NodePort"**
 
     .. code:: bash
 
@@ -37,3 +39,10 @@ All of the following commands and yaml files are contained within the "f5-kube-d
     .. code:: bash
 
         $ kubectl get pods -o wide
+        goto http://10.1.10.81
+
+#. Add or remove resources to the application.  Edit the yaml file and change the desired number of replicas
+    .. code:: bash
+
+        $ vim f5-hello-world-configmap-modify.yaml
+        $ kubectl apply -f f5-hello-world-configmap-modify.yaml
