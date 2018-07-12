@@ -1,0 +1,5 @@
+#!/bin/bash
+
+kubectl create serviceaccount kubernetes-dashboard -n kube-system
+kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+kubectl create -f kube-dashboard.yaml
