@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+kubectl delete service kubernetes-dashboard -n kube-system
+kubectl delete deployment kubernetes-dashboard -n kube-system
+kubectl delete clusterrolebinding kubernetes-dashboard -n kube-system
+kubectl delete serviceaccount kubernetes-dashboard -n kube-system
+
