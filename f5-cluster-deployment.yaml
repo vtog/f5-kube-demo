@@ -31,7 +31,7 @@ spec:
           args: [
             "--bigip-username=$(BIGIP_USERNAME)",
             "--bigip-password=$(BIGIP_PASSWORD)",
-            "--bigip-url=10.1.20.10",
+            "--bigip-url=10.1.10.60",
             "--bigip-partition=kubernetes",
             "--namespace=default",
             "--pool-member-type=cluster",
